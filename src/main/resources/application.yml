@@ -5,12 +5,9 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    #测试
-    #url: jdbc:mysql://sh-cynosdbmysql-grp-1shnw5ow.sql.tencentcdb.com:24085/book
-    #生产 10:4:101:69:3306
-    url: jdbc:mysql://10:4:101:69:3306/book
-    username: root
-    password: v7b66nPm
+    url: jdbc:mysql://${MYSQL_ADDRESS}/${MYSQL_DATABASE:book}
+    username: ${MYSQL_USERNAME}
+    password: ${MySQL_PASSWORD}
   mvc:
     view:
       suffix: .html
