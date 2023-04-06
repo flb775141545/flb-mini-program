@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tencent.wxcloudrun.dao.ExpenseLedgerMapper">
+
+    <resultMap id="expenseLedgerMapper" type="com.tencent.wxcloudrun.model.ExpenseLedger">
+        <id property="id" column="id"/>
+        <result property="createdDate" column="create_date" javaType="java.time.LocalDateTime" />
+        <result property="updatedDate" column="update_date" javaType="java.time.LocalDateTime"  />
+        <result property="type" column="type" javaType="java.lang.Integer"/>
+        <result property="subType" column="sub_type" javaType="java.lang.Integer"/>
+        <result property="expenseName" column="expense_name" javaType="java.lang.String"/>
+        <result property="amount" column="amount" javaType="java.math.BigDecimal"/>
+        <result property="expenseDate" column="expense_date" javaType="java.time.LocalDateTime" />
+    </resultMap>
+
+    <select id="queryExpenseLedgerList" resultMap="expenseLedgerMapper">
+        SELECT * FROM bk_expense_ledger l ORDER BY  l.expense_date desc
+    </select>
+
+</mapper>
