@@ -1,5 +1,6 @@
 package com.tencent.wxcloudrun.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -22,6 +23,7 @@ public class ExpenseLedger implements Serializable {
 
   private BigDecimal amount;
 
+  @JsonFormat(pattern = "yyyy-MM-dd")
   private LocalDateTime expenseDate;
 
 }

@@ -8,6 +8,10 @@ spring:
     url: jdbc:mysql://${MYSQL_ADDRESS}/${MYSQL_DATABASE:book}
     username: ${MYSQL_USERNAME}
     password: ${MySQL_PASSWORD}
+
+#    url: jdbc:mysql://sh-cynosdbmysql-grp-1shnw5ow.sql.tencentcdb.com:24085/book
+#    username: root
+#    password: v7b66nPms
   mvc:
     view:
       suffix: .html
